@@ -7,7 +7,7 @@ export class AppService {
     private wallet: HDNodeWallet; 
 
     constructor() {
-        const provider = new ethers.AlchemyProvider('goerli', process.env.ALCHEMY_KEY)
+        const provider = new ethers.JsonRpcProvider(process.env.PROVIDER_URL)
         this.wallet = ethers.Wallet.fromPhrase(process.env.MNEMONIC, provider)
     }
 
